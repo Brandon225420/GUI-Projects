@@ -1,11 +1,18 @@
 from tkinter import *
+import pygame
 import random
+import tkinter as tk
+import os
+from pygame.locals import *
+import sys   
 
+root = tk.Tk() 
 top = Tk()
 playlist = []
 myRolls = []
 dieType = []
 rollTimes= 0
+
 
 def results():
     result = E1.get()
@@ -28,43 +35,45 @@ def clearWindow():
 
 def mainMenu():
     clearWindow()
-    Lmain = Label(top, text = "Block 5 GUI Projects")
-    Lmain.grid(column = 0, row= 1) 
+    L1main = Label(top, text = "Block 5 GUI Projects")
+    L1main.grid(column= 0, row= 1) 
     B1main = Button(text= "Week 1", bg= "white", command = week1)
-    B1main.grid(colum = 0, row= 2)
+    B1main.grid(column= 0, row= 2)
     B2main = Button(text= "Week 2", bg= "white", command = week2)
     B2main.grid(column= 0, row= 3)
     B3main = Button(text= "Week 3", bg= "white")
     B3main.grid(column= 0, row= 4)
+    B4main = Button(text= "Pygame_v1", bg= "red")
+    B4main.grid(column= 0, row= 5)
 
 
 def week1():
-   clearWindow()
-   def results():
-       result = E1.get()
-       playlist.appennd(result)
-       E1.delele(0, END)
+    clearWindow()
+    def results():
+        result = E1.get()
+        playlist.append(result)
+        E1.delele(0, END)
     
-#This is a Label widget
-L1 = Label(top, text="Plavlist Generator")
-L1.grid(column= 0, row= 1)   
+    #This is a Label widget
+    L1 = Label(top, text="Plavlist Generator")
+    L1.grid(column= 0, row= 1)   
 
-#This is an entry widget
-E1 = Entry(top, bd = 5)
-E1.grid(column= 0, row= 2)
+    #This is an entry widget
+    E1 = Entry(top, bd = 5)
+    E1.grid(column= 0, row= 2)
 
-#This is7 a Button widget
-B1 = Button(text="  Enter  ", bg="white", command= results)
-B1.grid(column= 1, row= 2)
+    #This is7 a Button widget
+    B1 = Button(text="  Enter  ", bg="white", command= results)
+    B1.grid(column= 1, row= 2)
 
-B2 = Button(text="  Print ", bg="blue", command= printlist)
-B2.grid(column= 2, row= 2)
+    B2 = Button(text="  Print ", bg="blue", command= printlist)
+    B2.grid(column= 2, row= 2)
 
-B3 = Button(text = "Export List", bg = "#B4FFCD", command = exportlist)
-B3.grid(column= 0, row= 3)
+    B3 = Button(text = "Export List", bg = "#B4FFCD", command = exportlist)
+    B3.grid(column= 0, row= 3)
 
-Bexit = Button(text= " Clear ", bg = "#00ff00", command= mainMenu)
-Bexit.grid(column= 1, row= 3)
+    Bexit = Button(text= " Clear ", bg = "#00ff00", command= mainMenu)
+    Bexit.grid(column= 1, row= 3)
 
 
 def week2():
@@ -82,7 +91,7 @@ def week2():
         L4Week2 = Label(top, text= "Heres your rolls!")
         L4Week2.grid(column= 0, row= 1)
 
-        L5Week2 = Label(top, text= "{}".format(myRolls))
+        L5Week2 = Label(top, text= "{bruh }".format(myRolls))
         L5Week2.grid(column= 0, row= 2)
     
         B2Week2 = Button(text="Main Menu", bg= "yellow", commmand= mainMenu)
@@ -106,6 +115,29 @@ def week2():
 
     E2Week2 = Entry(top, bd = 5)
     E2Week2.grid(column= 3, row = 3)
+
+def Pygame_v1():
+    clearWindow()
+    def Pygame():
+
+        pygame.init()
+
+        screen = pygame.display.set_mode((800, 600))
+
+        running = True
+        while running:
+            for event in pygame.event.get():
+                if event.ty == pygame.QUIT():
+                    running = False
+            
+            
+
+
+
+        
+
+
+        
     
 
     
